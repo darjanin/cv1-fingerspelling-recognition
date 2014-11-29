@@ -1,4 +1,4 @@
-cg1-fingerspelling-recognition
+Fingerspelling Recognition
 ==============================
 
-Fingerspelling recognition project for computer vision 1 @matfyz
+[Fingerspelling](http://en.wikipedia.org/wiki/Fingerspelling) recognition project for computer vision 1 @matfyz.
