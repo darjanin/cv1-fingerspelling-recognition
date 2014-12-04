@@ -5,7 +5,7 @@ Fingerspelling Recognition
 
 ### Letters
 
-A, B, I, L, V, W, Y
+![A,B,I,L,V,W,Y](https://raw.githubusercontent.com/darjanin/cv1-fingerspelling-recognition/master/resources/chosen_letters.png)
 
 ### Milestones
 
