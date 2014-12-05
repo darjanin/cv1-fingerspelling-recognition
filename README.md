@@ -16,3 +16,7 @@ Fingerspelling Recognition
 
 Pridal som wiki, v ktorej su poznamky k projektu z cviceni. Ten google doc nejde editovat.
 [Navrhy na riesenia](https://github.com/darjanin/cv1-fingerspelling-recognition/wiki/Navrhy-na-riesenia)
+
+### References
+
+http://www.visionbib.com/bibliography/people933f1.html
