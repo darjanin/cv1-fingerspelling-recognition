@@ -1,7 +1,9 @@
-function rate = evaulate(func, folder)
+function rate = evaulate(func, folder, is_result_printed)
+    % returns percentage of success
+    
     imgPath = strcat('./',folder,'/'); % path to folder with images
     imgType = '*.jpg'; % all pictures need to be JPG
-    images = dir([imgPath imgType]); % load all images in folder
+    images = dir([imgPath imgType]); % load all images in specified folder
 
     expr = '_|\.'; % expression used to split picture name
 
@@ -15,7 +17,7 @@ function rate = evaulate(func, folder)
         set = char(splitStr(1));
         letter = char(splitStr(2));
 
-        letter_return = func(images(i).name);
+        letter_return = func(imread([imgPath,images(i).name]));
 
         if (letter == letter_return)
             success = 1;
@@ -27,9 +29,10 @@ function rate = evaulate(func, folder)
         result.(set).(letter) = struct('return', letter_return, 'success', success);
 
     end
-
-%     clc;
-    print_result(result);
+    
+    if (is_result_printed == 1)
+        print_result(result);
+    end
 
     rate = count_success / count_total * 100;
     disp([char(13),'Total success rate: ', num2str(rate), '%']);
@@ -40,8 +43,7 @@ function print_result(result)
     sets = fieldnames(result);
     
     for idx = 1:length(sets)
-        disp([' ',upper(char(sets(idx)))]);
-        disp('-----------------');
+        disp([char(13),upper(char(sets(idx)))]);
         
         print_set(result.(char(sets(idx))));
     end
@@ -54,12 +56,11 @@ function print_set(set)
         letter_name = char(letters(idx));
         
         if set.(letter_name).success == 1
-            success = '@@@@@';
+            success = 'PASSED';
         else
-            success = '     ';
+            success = '';
         end
         
-        disp(['| ',upper(letter_name),' | ',upper(set.(letter_name).return),' | ',success, ' |']);
-        disp('-----------------');
+        disp([upper(letter_name),', ',upper(set.(letter_name).return),', ',success]);
     end
 end

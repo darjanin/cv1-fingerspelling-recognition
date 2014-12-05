@@ -1,7 +1,8 @@
+function hand_gesture(img)
 % from http://stackoverflow.com/questions/20644498/hand-gesture-recognition-in-matlab
 
 %Read the image, and capture the dimensions
-img_orig = imread('test2.jpg');
+img_orig = img;
 height = size(img_orig,1);
 width = size(img_orig,2);
 
@@ -24,13 +25,13 @@ for i=1:numind
     out(r(i),c(i),:) = [0 0 255];
     bin(r(i),c(i)) = 1;
 end
-imshow(img_orig);
-figure; imshow(out);
-figure; imshow(bin);
+% imshow(img_orig);
+% figure; imshow(out);
+% figure; imshow(bin);
 
 bin = bwareaopen(bin, 10000);
 
-figure; imshow(bin);
+% figure; imshow(bin);
 
 se = strel('disk', 2);
 se2 = strel('disk', 1);
@@ -42,7 +43,7 @@ img2 = imdilate(bin, se);
 
 % img2 = bwareaopen(img2, 20000);
 
-figure; imshow(img2);
+% figure; imshow(img2);
 
 img2 = img2;
 [B, L, N] = bwboundaries(img2);
@@ -52,9 +53,9 @@ img2 = s.FilledImage;
 
 total = bwarea(img2);
 % disp(total);
-figure
-imshow(img2)
-text(10,10,strcat('\color{green}Objects Found:',num2str(N),' \color{red}Area:',num2str(total)))
+% figure
+% imshow(img2)
+% text(10,10,strcat('\color{green}Objects Found:',num2str(N),' \color{red}Area:',num2str(total)))
 % hold on
 
 % updated dimensions after crop
@@ -67,7 +68,8 @@ img3 = zeros(size(img2));
 img3(1:100, 1:width) = img2(1:100, 1:width);
 
 [B, L, N] = bwboundaries(img3);
-figure
-imshow(img3)
-disp(strcat('Objects Found:',num2str(N)));
+% figure
+% imshow(img3)
+% disp(strcat('Objects Found:',num2str(N)));
 
+end

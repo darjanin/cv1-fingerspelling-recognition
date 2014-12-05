@@ -11,8 +11,12 @@ function [letter, percentage] = recognize(img)
    %                get
    
    
+   % following code is just for testing, it should be replaced
+   % imshow(img);
    letters = {'a','b','i','l','v','w','y'};
    
+   % for testing replace it with function code
+   hand_gesture(img);
    
    letter = char(letters(randi(7))); % return letter
    percentage = 100; % return percentage
