@@ -1,7 +1,7 @@
 % from http://stackoverflow.com/questions/20644498/hand-gesture-recognition-in-matlab
 
 %Read the image, and capture the dimensions
-img_orig = imread('hand13.jpg');
+img_orig = imread('test2.jpg');
 height = size(img_orig,1);
 width = size(img_orig,2);
 
@@ -25,12 +25,12 @@ for i=1:numind
     bin(r(i),c(i)) = 1;
 end
 imshow(img_orig);
-% % figure; imshow(out);
-% figure; imshow(bin);
+figure; imshow(out);
+figure; imshow(bin);
 
 bin = bwareaopen(bin, 10000);
 
-% figure; imshow(bin);
+figure; imshow(bin);
 
 se = strel('disk', 2);
 se2 = strel('disk', 1);
@@ -42,7 +42,7 @@ img2 = imdilate(bin, se);
 
 % img2 = bwareaopen(img2, 20000);
 
-% figure; imshow(img2);
+figure; imshow(img2);
 
 img2 = img2;
 [B, L, N] = bwboundaries(img2);
