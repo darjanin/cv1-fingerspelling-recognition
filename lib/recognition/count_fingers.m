@@ -37,6 +37,6 @@ function finger_count = count_fingers( seg_img )
     elseif good_areas == 0 && total_areas == 1
         finger_count = 0
     else
-        finger_count = -1
+        finger_count = 0
 end
 

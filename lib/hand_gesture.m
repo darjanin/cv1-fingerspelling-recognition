@@ -27,4 +27,6 @@ function [letter, percentage] = hand_gesture(seg_img)
             end
         end
     end
+    
+    letter = lower(letter)
 end
