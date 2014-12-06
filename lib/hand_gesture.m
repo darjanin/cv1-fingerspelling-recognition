@@ -19,7 +19,7 @@ function [letter, percentage] = hand_gesture(seg_img)
             letter = 'V'
         elseif count == 3
             letter = 'W'
-        elseif count == 4
+        elseif count == 0
             letter = '.'
     end
     
