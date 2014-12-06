@@ -32,7 +32,7 @@ function result_img = segmentate(img)
 
     bin = bwareaopen(bin, 10000);
 
-    figure; imshow(bin);
+    % figure; imshow(bin);
 
     se = strel('disk', 2);
     se2 = strel('disk', 1);
@@ -41,7 +41,7 @@ function result_img = segmentate(img)
     % img2 = imerode(img2, se2);
 
     % img2 = bwareaopen(img2, 20000);
-    figure; imshow(img2);
+    % figure; imshow(img2);
 
     img2 = img2;
     [B, L, N] = bwboundaries(img2);
@@ -51,8 +51,8 @@ function result_img = segmentate(img)
 
     total = bwarea(img2);
     % disp(total);
-    figure
-    imshow(img2)
+    % figure
+    % imshow(img2)
     % text(10,10,strcat('\color{green}Objects Found:',num2str(N),' \color{red}Area:',num2str(total)))
     % hold on
 
