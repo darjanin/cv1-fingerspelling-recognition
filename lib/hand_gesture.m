@@ -1,21 +1,21 @@
-function [detected_letter, percentage] = hand_gesture(seg_img)
+function [letter, percentage] = hand_gesture(seg_img)
     % This function uses segmentated image to find letter
     % updated dimensions after crop
+    percentage = 100;
+    
     if has_thumb(seg_img)
-        detected_letter = 'X'
-        percentage = 100
+        if has_little_finger(seg_img)
+            letter = 'Y'
+        else
+            letter = 'L'
+        end
     else
-        detected_letter = 's'
+        letter = 's'
         percentage = 100;
     end
-        
     
-    
-    figure; imshow(seg_img);
     % total = bwarea(img2);
     
-    % height = size(img2, 1);
-    % width = size(img2, 2);
 
     % disp(strcat(num2str((total / (height*width)) * 100), '%'));
 
