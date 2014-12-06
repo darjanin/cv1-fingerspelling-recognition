@@ -2,6 +2,7 @@ function [letter, percentage] = hand_gesture(seg_img)
     % This function uses segmentated image to find letter
     % updated dimensions after crop
     percentage = 100;
+    letter = '.'
     
     if has_thumb(seg_img)
         if has_little_finger(seg_img)
@@ -10,8 +11,16 @@ function [letter, percentage] = hand_gesture(seg_img)
             letter = 'L'
         end
     else
-        letter = 's'
-        percentage = 100;
+        count = count_fingers(seg_img)
+        
+        if count == 1
+            letter = 'I'
+        elseif count == 2
+            letter = 'V'
+        elseif count == 3
+            letter = 'W'
+        elseif count == 4
+            letter = '.'
     end
     
     % total = bwarea(img2);
