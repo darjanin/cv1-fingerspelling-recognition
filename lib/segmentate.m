@@ -16,8 +16,8 @@ function result_img = segmentate(img)
 
     total = bwarea(img2);
     % disp(total);
-    % figure
-    % imshow(img2)
+     figure
+     imshow(img2)
     % text(10,10,strcat('\color{green}Objects Found:',num2str(N),' \color{red}Area:',num2str(total)))
     % hold on
 
