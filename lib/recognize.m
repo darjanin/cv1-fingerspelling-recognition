@@ -16,7 +16,7 @@ function [letter, percentage] = recognize(img)
    letters = {'a','b','i','l','v','w','y'};
    
    % for testing replace it with function code
-   close all;
+   %close all;
    seg_img = segmentate(img);
    [letter, percentage] = hand_gesture(seg_img);   
 

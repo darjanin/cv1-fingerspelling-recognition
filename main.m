@@ -8,4 +8,5 @@ path('test', path); % add test folder to path
 % used for all images in folder passed as second argument
 % first argument is handler for function
 % third argument if is 1 than print stats, any other number do otherwise
+close all;
 evaulate(@recognize, 'images', 1);
