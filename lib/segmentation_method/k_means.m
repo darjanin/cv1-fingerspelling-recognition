@@ -2,9 +2,6 @@ function [seg_pic] = k_means(pic)
     he = pic;
     cform = makecform('srgb2lab');
     lab_he = applycform(he,cform);
-    
-    
-    %Konvertovanie obrázka do L*a*b* priestoru kvôli lepšiemu rozlíšeniu dominantných farieb (biela, modrá, ružová)
 
     %Klasifikácia farieb L*a*b modelu pomocou zhlukovania K-means
     ab = double(lab_he(:,:,2:3));
@@ -16,12 +13,8 @@ function [seg_pic] = k_means(pic)
 
     %Rozdelenie pixlov obrázka pod¾a výskedkov K-means
     pixel_labels = reshape(cluster_idx,nrows,ncols);
-    %figure, imshow(pixel_labels,[]), set(gca,'position',[0 0 1 1],'units','normalized')
     
-    
-    
-    
-    
+    %Opening a closing na vysegmentovanom obrazku
     I = pixel_labels;
     %opening
     se = strel('disk',25);
@@ -42,5 +35,4 @@ function [seg_pic] = k_means(pic)
     
     seg_pic = lab_he; %return result
     %figure, imshow(lab_he);
-    
 end
