@@ -1,9 +1,12 @@
 function result_img = segmentate(img)
     % This function reruns segmentated and cropped image.
-
-    'sasd'
+    
+    %Run segmentation algorithm 
     img2 = k_means(img);
     
+    %Switch backround to black and hand to white color if needed
+    img2 = removeInnerObj(img2);
+   
     % Cropping of image.
 
     [B, L, N] = bwboundaries(img2);
