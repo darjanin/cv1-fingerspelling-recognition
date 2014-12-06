@@ -1,4 +1,5 @@
 function [letter, percentage] = recognize(img)
+    'reckogasdfads'
    % this function will call al other recognition and segmentation on image
    % that will be passed by argument img
    % in this file can be more functions or they will be splitted in other
