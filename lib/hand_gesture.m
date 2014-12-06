@@ -6,7 +6,7 @@ function [letter, percentage] = hand_gesture(seg_img)
     
     count = count_fingers(seg_img)
     
-    if has_thumb(seg_img) && count < 3
+    if has_thumb(seg_img) && count < 2
         if has_little_finger(seg_img)
             letter = 'Y'
         else
