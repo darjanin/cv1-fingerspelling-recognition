@@ -2,7 +2,7 @@ function [letter, percentage] = hand_gesture(seg_img)
     % This function uses segmentated image to find letter
     % updated dimensions after crop
     percentage = 100;
-    letter = '.'
+    letter = '.';
     
     if has_thumb(seg_img)
         if has_little_finger(seg_img)
@@ -27,4 +27,6 @@ function [letter, percentage] = hand_gesture(seg_img)
             end
         end
     end
+    
+    letter = lower(letter);
 end
