@@ -17,8 +17,9 @@ function [letter, percentage] = recognize(img)
    letters = {'a','b','i','l','v','w','y'};
    
    % for testing replace it with function code
+   close all;
    seg_img = segmentate(img);
-   letter, percentage = hand_gesture(seg_img);   
+   [letter, percentage] = hand_gesture(seg_img);   
 
    % letter = char(letters(randi(7))); % return letter
    % percentage = 100; % return percentage
