@@ -20,19 +20,11 @@ function [letter, percentage] = hand_gesture(seg_img)
         elseif count == 3
             letter = 'W'
         elseif count == 0
-            letter = '.'
+            if hand_raised(seg_img)
+                letter = 'B'
+            else
+                letter = 'A'
+            end
+        end
     end
-    
-    % total = bwarea(img2);
-    
-
-    % disp(strcat(num2str((total / (height*width)) * 100), '%'));
-
-    % img3 = zeros(size(img2));
-    % img3(1:100, 1:width) = img2(1:100, 1:width);
-
-    % [B, L, N] = bwboundaries(img3);
-    %figure
-    % imshow(img3)
-    % disp(strcat('Objects Found:',num2str(N)));
 end
