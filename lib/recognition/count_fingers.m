@@ -2,7 +2,7 @@ function finger_count = count_fingers( seg_img )
     % This method counts all raised fingers, 
     % returns number 0 - 4
 
-    set1 = seg_img(int32(end*0.15):int32(end*0.15), 1:end);
+    set1 = seg_img(int32(end*0.10):int32(end*0.10), 1:end);
     % figure; imshow(seg_img);
     % figure; imshow(set1);
     
