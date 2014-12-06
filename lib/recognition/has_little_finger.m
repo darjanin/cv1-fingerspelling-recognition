@@ -31,10 +31,6 @@ function has_little = has_little_finger( seg_img )
     
     if (0.03 < percentage)
         total_areas = total_areas + 1;
-
-        if (0.2 < percentage) && (0.35 > percentage)
-            good_areas = good_areas + 1;
-        end
     end
     
     if total_areas == 1 && good_areas == 1
