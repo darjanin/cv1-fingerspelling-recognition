@@ -28,9 +28,14 @@ function finger_count = count_fingers( seg_img )
         end
     end
     
+    percentage = count / size(set1, 2);
     if (0.05 < percentage) && (0.3 > percentage)
         good_areas = good_areas + 1;
+        total_areas = total_areas + 1;
     end
+    
+    good_areas
+    total_areas
     
     if good_areas == total_areas
         finger_count =  good_areas

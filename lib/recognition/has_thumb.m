@@ -47,7 +47,8 @@ function has_thumb = has_thumb( seg_img )
             end
         end
     end
-    
+
+    percentage = count / size(set1, 1);
     if (0.03 < percentage)
         total_areas = total_areas + 1;
 
