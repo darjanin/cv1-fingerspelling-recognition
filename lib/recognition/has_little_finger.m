@@ -34,9 +34,11 @@ function has_little = has_little_finger( seg_img )
     end
     
     if total_areas == 1 && good_areas == 1
-        has_little = 1
+        has_little = 1;
     else
-        has_little = 0
+        has_little = 0;
     end
+    
+    disp(['Has little finger: ',num2str(has_little)]);
 end
 

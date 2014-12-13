@@ -1,10 +1,10 @@
 function finger_count = count_fingers( seg_img )
     % This method counts all raised fingers, 
     % returns number 0 - 4
-
+    
     set1 = seg_img(int32(end*0.13):int32(end*0.13), 1:end);
-    % figure; imshow(seg_img);
-    % figure; imshow(set1);
+    figure; imshow(seg_img);
+%     figure; imshow(set1);
     
     count = 0;
     total_areas = 0;
@@ -25,6 +25,7 @@ function finger_count = count_fingers( seg_img )
                     good_areas = good_areas + 1;
                 end
             end
+
         end
     end
     
@@ -34,14 +35,19 @@ function finger_count = count_fingers( seg_img )
         total_areas = total_areas + 1;
     end
     
-    good_areas
-    total_areas
+    good_areas;
+    total_areas;
+    
+    disp(['Good areas: ',num2str(good_areas)]);
+    disp(['Total areas: ',num2str(total_areas)]);
     
     if good_areas == total_areas
-        finger_count =  good_areas
+        finger_count =  good_areas;
     elseif good_areas == 0 && total_areas == 1
-        finger_count = 0
+        finger_count = 0;
     else
-        finger_count = 0
+        finger_count = 0;
+   
+    disp(['Fingers: ',num2str(finger_count)]);
 end
 
