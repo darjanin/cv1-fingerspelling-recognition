@@ -5,9 +5,11 @@ function raised_hand = hand_raised( seg_img )
     width = size(seg_img, 2);
     
      if width/height > 0.57
-        raised_hand = 0
+        raised_hand = 0;
      else
-         raised_hand = 1
+         raised_hand = 1;
      end
+     
+     disp(['Hand raised: ',num2str(raised_hand)]);
 end
 

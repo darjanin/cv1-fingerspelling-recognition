@@ -1,4 +1,6 @@
 path('lib', path); % add lib folder to path
+path('lib/segmentation_method', path); % add lib folder to path
+path('lib/recognition', path); % add lib folder to path
 path('test', path); % add test folder to path
 
 % if you want to clear command window uncomment following line

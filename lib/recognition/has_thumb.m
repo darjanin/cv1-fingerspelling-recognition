@@ -61,9 +61,11 @@ function has_thumb = has_thumb( seg_img )
     % good_areas
 
     if total_areas == 1 && good_areas == 1
-        has_thumb = 1
+        has_thumb = 1;
     else
-        has_thumb = 0
+        has_thumb = 0;
     end
+    
+    disp(['Has thumb: ',num2str(has_thumb)]);
 end
 
