@@ -1,4 +1,4 @@
-function result_img = removeInnerObj(img)
+function result_img = background_manager(img)
     %function find out if backround is black, if not, switch hand and 
     %background color.
     

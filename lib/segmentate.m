@@ -5,7 +5,7 @@ function result_img = segmentate(img)
     img2 = k_means(img);
     
     %Switch backround to black and hand to white color if needed
-    img2 = removeInnerObj(img2);
+    img2 = background_manager(img2);
    
     % Cropping of image.
 
